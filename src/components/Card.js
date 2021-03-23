@@ -1,9 +1,22 @@
 import React, {Component} from "react";
+import 'bootstrap/dist/css/bootstrap.css';
 import data from "../services/data.json";
 
 function Item(props) {
   return(
-    <div>{props.el.nombre}<br />{props.el.direccion}</div>
+    <React.Fragment>
+      <div className="col mb-2">
+      <div className="card h-100">
+        <div className="card-body">
+          <h3 className="card-title">{props.el.nombre}</h3>
+          <div className="card-text">
+            <address>{props.el.direccion}</address>
+            <a className="card-link" href="{props.el.link}">Sitio web</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </React.Fragment>
   )
 }
 
@@ -16,7 +29,11 @@ export default class Elementos extends Component {
     return(
     <React.Fragment>
     <h1>Museos</h1>
-    <div>{ data.results.map((el,index) => <Item key={index} el={el} />) }</div>
+    <div className="container">
+      <div className="row row-cols-1 row-cols-md-3">
+      { data.results.map((el,index) => <Item key={index} el={el} />) }
+      </div>
+    </div>
     </React.Fragment>
     )
   }

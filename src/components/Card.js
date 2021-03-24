@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {Link} from "wouter";
 import 'bootstrap/dist/css/bootstrap.css';
 import data from "../services/data.json";
 
@@ -11,8 +10,9 @@ function Item(props) {
         <div className="card-body">
           <h3 className="card-title">{props.el.nombre}</h3>
           <div className="card-text">
-            <address>{props.el.direccion}</address>
-            <a className="card-link" href="{props.el.link}">{props.el.link}</a>
+            <p><small>{props.el.direccion}</small></p>
+            <a className="card-link" href={props.el.link} target="_blank" rel="noreferrer">Sitio Web</a>
+            
           </div>
         </div>
       </div>

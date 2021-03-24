@@ -12,7 +12,6 @@ function Item(props) {
           <div className="card-text">
             <p><small>{props.el.direccion}</small></p>
             <a className="card-link" href={props.el.link} target="_blank" rel="noreferrer">Sitio Web</a>
-            
           </div>
         </div>
       </div>
